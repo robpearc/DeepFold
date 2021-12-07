@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/src/evaluate_cuda_kernels.cu
+evaluate_cuda_kernels.h
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/src/evaluate_cuda_kernels.h
+conjugrad.h
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/src/conjugrad.h
+math_functions.h
+-
+
+include/ccmpred.h
+conjugrad.h
+include/conjugrad.h
+
+include/evaluate_cuda.h
+
+include/evaluate_cuda_kernels.h
+stdio.h
+-
+conjugrad.h
+include/conjugrad.h
+evaluate_cuda.h
+include/evaluate_cuda.h
+ccmpred.h
+include/ccmpred.h
+
+lib/libconjugrad/include/conjugrad.h
+stdbool.h
+-
+

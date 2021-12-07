@@ -1,0 +1,304 @@
+Looking for a CUDA compiler failed with the following output:
+-- The CUDA compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_CUDA_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CUDACXX" or the CMake cache entry CMAKE_CUDA_COMPILER to the full
+  path to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/mac/Desktop/projects/custom_ccmpred/ccmpred_gap/CMakeFiles/CheckCUDA/CMakeFiles/CMakeOutput.log".
+See also "/Users/mac/Desktop/projects/custom_ccmpred/ccmpred_gap/CMakeFiles/CheckCUDA/CMakeFiles/CMakeError.log".
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+No such file or directory
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+No such file or directory
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_91e31/fast && /usr/bin/make -f CMakeFiles/cmTC_91e31.dir/build.make CMakeFiles/cmTC_91e31.dir/build
+make[1]: Entering directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91e31.dir/src.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_91e31.dir/src.c.o   -c /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_91e31
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/cmake-3.15.5-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91e31.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_91e31.dir/src.c.o  -o cmTC_91e31 
+CMakeFiles/cmTC_91e31.dir/src.c.o: In function `main':
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_91e31] Error 1
+make[1]: Leaving directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+make: *** [cmTC_91e31/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_01777/fast && /usr/bin/make -f CMakeFiles/cmTC_01777.dir/build.make CMakeFiles/cmTC_01777.dir/build
+make[1]: Entering directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_01777.dir/src.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_01777.dir/src.c.o   -c /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_01777
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/cmake-3.15.5-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01777.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_01777.dir/src.c.o  -o cmTC_01777 
+CMakeFiles/cmTC_01777.dir/src.c.o: In function `main':
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_01777] Error 1
+make[1]: Leaving directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+make: *** [cmTC_01777/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0f513/fast && make[1]: Entering directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0f513.dir/build.make CMakeFiles/cmTC_0f513.dir/build
+make[2]: Entering directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f513.dir/src.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0f513.dir/src.c.o   -c /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0f513
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/cmake-3.15.5-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f513.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_0f513.dir/src.c.o  -o cmTC_0f513 
+CMakeFiles/cmTC_0f513.dir/src.c.o: In function `main':
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+make[2]: *** [cmTC_0f513] Error 1
+make[2]: Leaving directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTC_0f513/fast] Error 2
+make[1]: Leaving directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ee795/fast && /usr/bin/make -f CMakeFiles/cmTC_ee795.dir/build.make CMakeFiles/cmTC_ee795.dir/build
+make[1]: Entering directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ee795.dir/src.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_ee795.dir/src.c.o   -c /mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_ee795
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/cmake-3.15.5-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee795.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_ee795.dir/src.c.o  -o cmTC_ee795 
+CMakeFiles/cmTC_ee795.dir/src.c.o: In function `main':
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTC_ee795] Error 1
+make[1]: Leaving directory `/mnt/d/projects/custom_ccmpred/custom_ccmpred/ccmpred_gap/CMakeFiles/CMakeTmp'
+make: *** [cmTC_ee795/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake cmTC_b3b1c/fast && /usr/bin/gmake -f CMakeFiles/cmTC_b3b1c.dir/build.make CMakeFiles/cmTC_b3b1c.dir/build
+gmake[1]: Entering directory `/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b3b1c.dir/src.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b3b1c.dir/src.c.o   -c /home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b3b1c
+/home/xiaogenz/rt3/bin/cmake-3.15.5-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3b1c.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b3b1c.dir/src.c.o  -o cmTC_b3b1c 
+CMakeFiles/cmTC_b3b1c.dir/src.c.o: In function `main':
+/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:11: undefined reference to `pthread_create'
+/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:12: undefined reference to `pthread_detach'
+/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:13: undefined reference to `pthread_join'
+/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp/src.c:14: undefined reference to `pthread_atfork'
+collect2: ld returned 1 exit status
+gmake[1]: *** [cmTC_b3b1c] Error 1
+gmake[1]: Leaving directory `/home/xiaogenz/rt3/bin/ccmpred_gap/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_b3b1c/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Looking for a CUDA compiler failed with the following output:
+-- The CUDA compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_CUDA_COMPILER could be found.
+
+  Tell CMake where to find the compiler by setting either the environment
+  variable "CUDACXX" or the CMake cache entry CMAKE_CUDA_COMPILER to the full
+  path to the compiler, or to the compiler name if it is in the PATH.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CheckCUDA/CMakeFiles/CMakeOutput.log".
+See also "/nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CheckCUDA/CMakeFiles/CMakeError.log".
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+No such file or directory
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: CMAKE_CUDA_COMPILER-NOTFOUND 
+Build flags: 
+Id flags:  -v;--keep;--keep-dir;tmp
+
+The output was:
+No such file or directory
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_733bd/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_733bd.dir/build.make CMakeFiles/cmTC_733bd.dir/build
+gmake[1]: Entering directory `/nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_733bd.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -std=c99 -O3 -fno-strict-aliasing -g    -o CMakeFiles/cmTC_733bd.dir/CheckSymbolExists.c.o   -c /nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_733bd
+/sw/arcts/centos7/cmake/3.13.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_733bd.dir/link.txt --verbose=1
+/usr/bin/cc -std=c99 -O3 -fno-strict-aliasing -g     CMakeFiles/cmTC_733bd.dir/CheckSymbolExists.c.o  -o cmTC_733bd 
+CMakeFiles/cmTC_733bd.dir/CheckSymbolExists.c.o: In function `main':
+/nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8: undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [cmTC_733bd] Error 1
+gmake[1]: Leaving directory `/nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp'
+gmake: *** [cmTC_733bd/fast] Error 2
+
+File /nfs/amino-home/zcx/Projects/QUARK/version_2020_05_05/distance/ResTriplet3_04132020/ccmpred_gap/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
