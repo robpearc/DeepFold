@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH -e /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/dMSA_1l6hA.err
+#SBATCH -o /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/dMSA_1l6hA.out
+#SBATCH -t 48:00:00
+#SBATCH --mem=8GB
+#SBATCH --job-name=dMSA_1l6hA
+
+/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/scripts/../bin/hhsuite2/scripts/build_MSA.py \
+    -hhblitsdb=/nfs/amino-home/zhng/local_library/uniclust30_2017_04/uniclust30_2017_04 \
+    -jackhmmerdb=/scratch/aminoproject_fluxoe/zhanglabs/seqdb/uniref90_04042018/uniref90.fasta \
+    -hmmsearchdb=/scratch/aminoproject_fluxoe/zhanglabs/seqdb/metaclust/metaclust.fasta \
+    -tmpdir=/tmp/robpearc/dMSA_1l6hA \
+    /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/MSA/DeepMSA.fasta

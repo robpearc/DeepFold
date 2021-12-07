@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -e /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/mkin_1l6hA.err
+#SBATCH -o /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/mkin_1l6hA.out
+#SBATCH -t 24:00:00
+#SBATCH --mem=3500mb
+#SBATCH --job-name=mkin_1l6hA
+
+echo hostname: `hostname`   >/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/ware_mkin_1l6hA
+echo starting time: `date` >>/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/ware_mkin_1l6hA
+echo pwd `pwd`             >>/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/ware_mkin_1l6hA 
+
+/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/scripts/../bin/mkinputmod.pl mkin_1l6hA /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA
+
+echo ending time: `date`   >>/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/ware_mkin_1l6hA

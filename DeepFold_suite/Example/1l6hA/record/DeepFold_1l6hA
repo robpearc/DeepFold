@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -e /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/DeepFold_1l6hA.err
+#SBATCH -o /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA/record/DeepFold_1l6hA.out
+#SBATCH -t 24:00:00
+#SBATCH --mem=8000mb
+#SBATCH --job-name=DeepFold_1l6hA
+
+echo hostname: `hostname`
+echo starting time: `date`
+echo pwd `pwd`
+
+/nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/scripts/../distance//DeepFoldmod.pl /nfs/amino-home/robpearc/PROJECTS/DeepFold_package_github_DeepMSA/OUT/1l6hA DeepFold_1l6hA True
+
+echo ending time: `date`
