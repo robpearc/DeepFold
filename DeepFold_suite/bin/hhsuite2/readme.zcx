@@ -1,0 +1,39 @@
+qMSA: quadruple multiple sequence alignment generation
+
+== Introduction ==
+This is the package for qMSA (main program: script/qMSA.py), which is an
+extension of DeepMSA (main program: script/build_MSA.py) for MSA generation
+in structure prediction tasks. qMSA is based on a different 4-stage algorithm
+instead of the 3-stage algorithm in DeepMSA.
+
+== Example usage ==
+
+scripts/qMSA.py \
+    -hhblitsdb=/nfs/amino-projects/zhanglabs/seqdb/uniclust/UniRef30_2020_01 \
+    -jackhmmerdb=/nfs/amino-projects/zhanglabs/seqdb/uniref90/uniref90.clean.fasta \
+    -hhblits3db=/scratch/aminoproject_fluxoe/zhanglabs/seqdb/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    -hmmsearchdb=/nfs/amino-projects/zhanglabs/seqdb/mgnify/mgy_clusters.clean.fasta:/nfs/amino-projects/zhanglabs/seqdb/JGI/IMGVR/linclust.fasta:/nfs/amino-projects/zhanglabs/seqdb/tsa/curated/cdhit.fasta \
+    -tmpdir=/tmp/$USER/$tag \
+    seq.fasta
+
+Here, -tmpdir is used to specify the temporary folder. In the above example, $tag can
+be the name of your protein.
+
+-hhblitsdb must point to a hhsuite2 format database. As of uniclust30 (aka 
+UniRef30) 2019_11 or later, Soeding lab has stop supporting hhsuite2 in 
+uniclust. To convert the new hhsuite3 format uniclust30 database to old
+hhsuite2 format, you can use scripts/hhblitsdb3to2.py. Note that it is not
+always possible to perfectly convert hhsuite3 database to hhsuite2 format
+due to difference in sequence length limitation. Therefore, some query
+that hit huge protein in the database will cause hhblits2 error. That is
+why qMSA implements a backup hhblits3 subroutine for searching -hhblitsdb
+when hhblits2 fails.
+
+-hhblits3db can be any hhsuite3 database. In this case, it is bfd 
+(https://bfd.mmseqs.com/). bfd = metaclust + uniprot + plass
+plass = Soil Reference Catalog + Marine Eukaryotic Reference Catalog
+This script could require 15GB of physical memory when submitting the job
+by qsub or sbatch.
+
+-hmmsearchdb in the above case includes: mgnify (aka EBI metagenomics),
+IMG/VR, and NCBI TSV.
